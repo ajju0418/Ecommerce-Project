@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/products/product-detail/product-detail.css"],
+  "sourcesContent": ["@keyframes fadeIn {\r\n  from {\r\n    opacity: 0;\r\n    transform: scale(0.95);\r\n  }\r\n  to {\r\n    opacity: 1;\r\n    transform: scale(1);\r\n  }\r\n}\r\n\r\n.animate-fadeIn {\r\n  animation: fadeIn 0.3s ease-out;\r\n}\r\n"],
+  "mappings": ";AAAA,WAAA;AACE;AACE,aAAA;AACA,eAAA,MAAA;AACF;AACA;AACE,aAAA;AACA,eAAA,MAAA;AACF;AACF;AAEA,CAAA;AACE,aAAA,OAAA,KAAA;AACF;",
+  "names": []
+}

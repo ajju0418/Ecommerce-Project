@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/shared/rating/rating.css"],
+  "sourcesContent": [".rating-stars {\r\n  display: flex;\r\n  gap: 1px; /* Smaller gap between stars */\r\n  flex-wrap: wrap;\r\n  overflow: hidden;\r\n  max-width: 100%;\r\n}\r\n\r\n.star-icon {\r\n  color: gold;\r\n  font-size: 15px;\r\n}\r\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,OAAA;AACA,aAAA;AACA,YAAA;AACA,aAAA;AACF;AAEA,CAAA;AACE,SAAA;AACA,aAAA;AACF;",
+  "names": []
+}

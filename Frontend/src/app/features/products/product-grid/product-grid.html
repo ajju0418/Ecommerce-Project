@@ -1,0 +1,56 @@
+<section class="product-grid-section">
+  <div class="section-container">
+    <div class="product-grid-header">
+      <div class="header-content">
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-subtitle">Handpicked items just for you</p>
+      </div>
+      <a [routerLink]="['/products-page']" class="btn btn-primary view-all-btn">
+        <span>View All Products</span>
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="products-grid">
+      <div *ngFor="let product of products" class="product-card hover-lift">
+        <div class="product-image">
+          <a [routerLink]="['/products-page']">
+            <img [src]="product.image" [alt]="product.brand" />
+          </a>
+          <div class="product-overlay">
+            <button class="quick-view-btn">
+              <i class="bi bi-eye"></i>
+            </button>
+            <button class="wishlist-btn">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="discount-badge" *ngIf="product.originalPrice > product.discountedPrice">
+            {{((product.originalPrice - product.discountedPrice) / product.originalPrice * 100) | number:'1.0-0'}}% OFF
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>{{ product.brand }}</h3>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+            </div>
+            <span class="rating-count">(4.2)</span>
+          </div>
+          <div class="price-info">
+            <span class="current-price">₹{{ product.discountedPrice }}</span>
+            <span class="original-price" *ngIf="product.originalPrice > product.discountedPrice">₹{{ product.originalPrice }}</span>
+          </div>
+          <button class="add-to-cart-btn">
+            <i class="bi bi-cart-plus"></i>
+            <span>Add to Cart</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

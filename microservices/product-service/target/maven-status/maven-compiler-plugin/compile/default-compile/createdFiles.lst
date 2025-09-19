@@ -1,0 +1,10 @@
+com\mystore\product\ProductServiceApplication.class
+com\mystore\product\config\DataInitializer.class
+com\mystore\product\repository\ProductRepository.class
+com\mystore\product\service\IProductService.class
+com\mystore\product\model\Product.class
+com\mystore\product\service\ProductService.class
+com\mystore\product\config\ServiceConfig.class
+com\mystore\product\controller\ProductController.class
+com\mystore\product\config\SecurityConfig.class
+com\mystore\product\dto\ProductDto.class

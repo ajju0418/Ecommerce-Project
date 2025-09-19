@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<div class="container mx-auto py-10 bg-white font-sans mt-1 shadow-lg rounded-lg p-6">
+  <header class="mb-10 text-center border-b border-gray-300 pb-4">
+    <h1 class="text-3xl font-bold text-black tracking-wide">
+      <i class="bi bi-box-seam-fill mr-4 text-gray-700"></i>Order History
+    </h1>
+  </header>
+
+  <section>
+    @if (orders.length === 0) {
+      <div class="bg-blue-100 text-center mt-10 p-4 rounded text-gray-700">
+        <span>You have not placed any orders yet.</span>
+      </div>
+    } @else {
+      @for (order of orders; track order.id) {
+        <div class="bg-gray-100 mb-4 shadow-sm rounded-lg border border-gray-300 p-6 hover:shadow-md transition-shadow">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex-1 mb-4 md:mb-0">
+              <div 
+                class="cursor-pointer hover:text-blue-600 transition-colors duration-200"
+                (click)="viewOrderDetails(order.id || '')">
+                <h5 class="text-lg font-bold text-black inline">Order #{{ order.id }}</h5>
+                <i class="bi bi-chevron-right ml-2 text-sm"></i>
+              </div>
+
+              <p class="text-sm text-gray-600">Date: {{ order.orderDate | date:'medium' }}</p>
+              <p class="text-sm font-semibold text-gray-700">Total: ₹{{ order.totalAmount.toFixed(2) }}</p>
+            </div>
+            
+            <div class="flex flex-col items-center">
+              <span class="font-bold text-sm"
+                [ngClass]="{
+                  'text-yellow-600': order.status === 'pending',
+                  'text-blue-600': order.status === 'processing',
+                  'text-green-600': order.status === 'completed'
+                }">
+                Status: {{ order.status | titlecase }}
+              </span>
+              <button (click)="trackOrder(order.id || '')"
+                class="mt-2 bg-black hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded transition-colors">
+                Track Order
+              </button>
+            </div>
+          </div>
+        </div>
+      }
+    }
+  </section>
+</div>
+
+<app-footer></app-footer>

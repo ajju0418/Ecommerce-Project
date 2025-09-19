@@ -1,0 +1,6 @@
+com\mystore\order\config\SecurityConfig.class
+com\mystore\order\model\OrderItem.class
+com\mystore\order\OrderServiceApplication.class
+com\mystore\order\model\Order$OrderStatus.class
+com\mystore\order\controller\OrderController.class
+com\mystore\order\model\Order.class
